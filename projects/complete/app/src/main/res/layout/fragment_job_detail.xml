@@ -1,0 +1,15 @@
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewFlipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 0 -->
+    <ProgressBar
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center" />
+
+    <!-- 1 -->
+    <include layout="@layout/layout_job_detail" />
+
+</ViewFlipper>
