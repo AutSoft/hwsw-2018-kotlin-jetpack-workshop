@@ -95,7 +95,7 @@ At this point, it's worth jumping into the `JobListViewState` class to see what 
 ```kotlin
 sealed class JobListViewState
 
-data class JobListReady(val jobPostings: List<JobListing>) : JobListViewState()
+data class JobListReady(val jobListings: List<JobListing>) : JobListViewState()
 
 object Loading : JobListViewState()
 ```
@@ -111,8 +111,8 @@ class JobListViewModel @Inject constructor(
 ) : BaseViewModel<JobListViewState>(Loading) {
 
     fun load() = launch {
-        val jobPostings = jobListPresenter.getData()
-        viewState = JobListReady(jobPostings)
+        val jobListings = jobListPresenter.getJobListings()
+        viewState = JobListReady(jobListings)
     }
 
 }
@@ -137,7 +137,7 @@ class JobListPresenter @Inject constructor(
 The `getData` function is called from the UI thread inside a coroutine, and we want to move all work below the ViewModel layer to background threads. We'll do this as the first thing in every Presenter method we implement, using `withContext` to jump to the `IO` threadpool, and perform anything we need in this new context.
 
 ```kotlin
-suspend fun getData(): List<JobListing> = withContext(Contexts.IO) {
+suspend fun getJobListings(): List<JobListing> = withContext(Contexts.IO) {
     jobsInteractor.getAllJobListings().map {
         JobListing(
                 id = it.id,
