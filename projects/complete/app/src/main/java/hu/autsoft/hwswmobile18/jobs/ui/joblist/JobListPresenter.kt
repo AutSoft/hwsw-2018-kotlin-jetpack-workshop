@@ -5,8 +5,7 @@ import hu.autsoft.hwswmobile18.jobs.domain.JobsInteractor
 import kotlinx.coroutines.experimental.withContext
 import javax.inject.Inject
 
-class
-JobListPresenter @Inject constructor(
+class JobListPresenter @Inject constructor(
         private val jobsInteractor: JobsInteractor
 ) {
 

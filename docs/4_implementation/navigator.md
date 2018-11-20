@@ -8,17 +8,17 @@ The architecture provides a `Navigator` interface for us to implement, which wil
 interface Navigator {
 
     fun add(fragment: Fragment)
-    fun replace(fragment: Fragment)
     fun pop()
 
 }
 ```
 
-This version of it has just a few operations so that we can easily implement it. We'll think about our app as a stack of screens (not the `Fragment` backstack, a _real_ stack). We can:
+This version of it has just these two operations so that we can easily implement it. (You could of course add others onto it later!)
 
-- `add`: put new screens on the top,
-- `replace`: replace the screen on top with another one, 
-- `pop`: remove the screen on top. 
+We'll think about our app as a stack of screens (not the `Fragment` backstack, a _real_ stack). Through this interface, we can:
+
+- `add`: put a screen on the top of the stack,
+- `pop`: remove the screen currently on top.
 
 We'll add the `Navigator` interface to `MainActivity`'s supertypes, and generate the necessary methods.
 
@@ -42,18 +42,7 @@ if (savedInstanceState == null) {
 }
 ```
 
-We can reuse this code for `replace`, only in this case, we won't add the transaction to the `Fragment` backstack - this essentially loses the `Fragment` we had on top already, which is what we want here. 
-
-```kotlin
-override fun replace(fragment: Fragment) {
-    supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.mainContent, fragment)
-            .commit()
-}
-```
-
-`pop` is the simplest to implement:
+From here, `pop` is very simple to implement:
 
 ```kotlin
 supportFragmentManager.popBackStack()
