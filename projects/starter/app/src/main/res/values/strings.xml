@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HWSW - GitHub Jobs</string>
+
+    <!-- Job list -->
+
+    <!-- Job list content descriptions -->
+    <string name="job_list_content_description_company_logo">Company logo</string>
+
+    <!-- Job detail -->
+    <string name="job_detail_button_apply">Apply</string>
+
+    <!-- Job detail content descriptions -->
+    <string name="job_detail_content_description_company_logo">Company logo</string>
+
+</resources>
