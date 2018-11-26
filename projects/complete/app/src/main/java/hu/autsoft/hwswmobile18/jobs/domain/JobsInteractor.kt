@@ -12,7 +12,7 @@ class JobsInteractor @Inject constructor(
         private val diskDataSource: DiskDataSource
 ) {
 
-    private fun String?.toHttpsUrl(): String? = this?.replaceFirst("http", "https")
+    private fun String?.toHttpsUrl(): String? = this?.replaceFirst("http://", "https://")
 
     suspend fun getAllJobListings(): List<JobListing> {
         return networkDataSource.getAllJobListings().map {
@@ -27,11 +27,6 @@ class JobsInteractor @Inject constructor(
     }
 
     suspend fun getJobUrlById(jobId: String): String {
-//        return diskDataSource.getJobUrl(jobId)
-//                ?: networkDataSource.getJobDetailsById(jobId)
-//                        .also { diskDataSource.saveJobUrl(it) }
-//                        .url
-
         val jobUrl = diskDataSource.getJobUrl(jobId)
 
         if (jobUrl != null) {

@@ -1,7 +1,7 @@
 package hu.autsoft.hwswmobile18.jobs.ui.joblist
 
 import hu.autsoft.hwswmobile18.jobs.arch.BaseViewModel
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class JobListViewModel @Inject constructor(

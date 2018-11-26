@@ -2,7 +2,7 @@ package hu.autsoft.hwswmobile18.jobs.ui.jobdetail
 
 import hu.autsoft.hwswmobile18.jobs.arch.Contexts
 import hu.autsoft.hwswmobile18.jobs.domain.JobsInteractor
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class JobDetailPresenter @Inject constructor(

@@ -3,9 +3,9 @@ package hu.autsoft.hwswmobile18.jobs.arch
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Job
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel<VS : Any>(initialState: VS) : ViewModel(), CoroutineScope {
 

@@ -9,7 +9,7 @@ class JobsInteractor @Inject constructor(
         private val networkDataSource: NetworkDataSource
 ) {
 
-    private fun String?.toHttpsUrl(): String? = this?.replaceFirst("http", "https")
+    private fun String?.toHttpsUrl(): String? = this?.replaceFirst("http://", "https://")
 
     suspend fun getAllJobListings(): List<JobListing> {
         return networkDataSource.getAllJobListings().map {

@@ -2,7 +2,7 @@ package hu.autsoft.hwswmobile18.jobs.ui.jobdetail
 
 import hu.autsoft.hwswmobile18.jobs.arch.BaseViewModel
 import hu.autsoft.hwswmobile18.jobs.arch.OneShotEvent
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class JobDetailViewModel @Inject constructor(

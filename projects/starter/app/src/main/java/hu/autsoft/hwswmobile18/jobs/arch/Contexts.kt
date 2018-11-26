@@ -1,8 +1,6 @@
 package hu.autsoft.hwswmobile18.jobs.arch
 
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.IO
-import kotlinx.coroutines.experimental.android.Main
+import kotlinx.coroutines.Dispatchers
 
 object Contexts {
 
